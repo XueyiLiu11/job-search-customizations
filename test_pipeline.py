@@ -54,6 +54,17 @@ class PipelineTests(unittest.TestCase):
         result = assess(job(title="Financial Analyst"), PROFILE, TODAY)
         self.assertEqual(result["resume_route"], "finance")
 
+    def test_future_date_is_not_recent(self):
+        self.assertEqual(assess(job(posted_at="2026-09-17"), PROFILE, TODAY)["recency"], "older")
+
+    def test_already_applied_url_is_suppressed(self):
+        profile = {**PROFILE, "already_applied_urls": ["https://example.org/role?ref=email"]}
+        self.assertEqual(shortlist([job()], profile, TODAY), [])
+
+    def test_explicit_opt_restriction_is_not_shortlisted(self):
+        restricted = job(description="STEM OPT candidates are not considered.")
+        self.assertEqual(shortlist([restricted], PROFILE, TODAY), [])
+
 
 if __name__ == "__main__":
     unittest.main()
