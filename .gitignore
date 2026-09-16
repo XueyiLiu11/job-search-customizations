@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+profile.json
+jobs.jsonl
+applications/
+resumes/
+*.pdf
+*.docx
+.env

@@ -1,0 +1,13 @@
+{
+  "locations": ["New York", "Brooklyn", "Long Island City", "Jersey City"],
+  "target_roles": ["Data Analyst", "Business Analyst", "Growth Analyst", "Financial Analyst"],
+  "skills": ["SQL", "Python", "Excel", "Tableau", "A/B testing"],
+  "max_required_years": 3,
+  "exclude_titles": ["Senior", "Staff", "Director", "Manager"],
+  "resume_routes": {
+    "finance": ["Financial Analyst", "FP&A"],
+    "marketing": ["Growth", "Marketing"],
+    "product": ["Product", "Business Analyst"]
+  },
+  "already_applied_urls": []
+}
